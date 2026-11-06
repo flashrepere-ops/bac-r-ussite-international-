@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color" content="#071a35">
+    <meta name="description" content="BAC RÉUSSITE INTERNATIONAL : apprendre, progresser et réussir ses examens.">
+
+    <title>BAC RÉUSSITE INTERNATIONAL</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+</head>
+
+<body>
+
+    <!-- EN-TÊTE -->
+    <header class="header">
+        <div class="logo">BRI</div>
+
+        <div class="brand">
+            <h2>BAC RÉUSSITE</h2>
+            <span>INTERNATIONAL</span>
+        </div>
+
+        <button class="language-button" onclick="changeLanguage()">
+            FR / EN
+        </button>
+    </header>
+
+
+    <!-- PAGE D'ACCUEIL -->
+    <main id="setupScreen">
+
+        <section class="hero">
+            <div class="hero-content">
+
+                <h1>
+                    Réussis ton avenir avec
+                    BAC RÉUSSITE INTERNATIONAL
+                </h1>
+
+                <p class="description">
+                    Une plateforme éducative pour apprendre,
+                    progresser et réussir tes examens.
+                </p>
+
+                <div class="zone-selection">
+
+                    <button class="zone"
+                        onclick="selectZone('fr', this)">
+                        ESPACE FRANCOPHONE
+                    </button>
+
+                    <button class="zone"
+                        onclick="selectZone('en', this)">
+                        ENGLISH SPEAKING AREA
+                    </button>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- PROFIL DE L'ÉLÈVE -->
+        <section class="student-section">
+
+            <h2 class="section-title">
+                Préparons ta réussite
+            </h2>
+
+            <div class="form-container">
+
+                <label for="country">
+                    Choisis ton pays
+                </label>
+
+                <select id="country">
+                    <option value="">Sélectionner un pays</option>
+                    <option value="Togo">Togo</option>
+                    <option value="Benin">Bénin</option>
+                    <option value="Cote d'Ivoire">Côte d'Ivoire</option>
+                    <option value="Senegal">Sénégal</option>
+                    <option value="Burkina Faso">Burkina Faso</option>
+                    <option value="Mali">Mali</option>
+                    <option value="Niger">Niger</option>
+                    <option value="Ghana">Ghana</option>
+                    <option value="Nigeria">Nigeria</option>
+                    <option value="Liberia">Liberia</option>
+                    <option value="Kenya">Kenya</option>
+                    <option value="Uganda">Uganda</option>
+                    <option value="South Africa">South Africa</option>
+                </select>
+
+
+                <label for="level">
+                    Choisis ton niveau
+                </label>
+
+                <select id="level">
+                    <option value="">Sélectionner un niveau</option>
+                    <option value="Seconde">Seconde</option>
+                    <option value="Première">Première</option>
+                    <option value="Terminale">Terminale</option>
+                    <option value="Junior Secondary">Junior Secondary</option>
+                    <option value="Senior Secondary">Senior Secondary</option>
+                </select>
+
+
+                <label for="series">
+                    Choisis ta série
+                </label>
+
+                <select id="series">
+                    <option value="">Sélectionner une série</option>
+                    <option value="A">Série A</option>
+                    <option value="C">Série C</option>
+                    <option value="D">Série D</option>
+                    <option value="Other">Autre</option>
+                </select>
+
+
+                <button class="start" onclick="startApp()">
+                    COMMENCER
+                </button>
+
+                <p id="message" aria-live="polite"></p>
+
+            </div>
+        </section>
+
+    </main>
+
+
+    <!-- TABLEAU DE BORD -->
+    <!-- Il sera affiché après la configuration du profil -->
+
+    <main id="dashboardScreen" hidden>
+
+        <section class="dashboard-welcome">
+
+            <p class="dashboard-label">
+                BIENVENUE SUR
+            </p>
+
+            <h1>BAC RÉUSSITE INTERNATIONAL</h1>
+
+            <h2 id="dashboardGreeting">
+                Bonjour, élève !
+            </h2>
+
+            <p id="dashboardProfile">
+                Ton espace personnel de réussite.
+            </p>
+
+        </section>
+
+
+        <!-- MENU PRINCIPAL -->
+
+        <section class="dashboard-section">
+
+            <h2>Mon espace éducatif</h2>
+
+            <div class="dashboard-grid">
+
+                <button class="dashboard-card" data-section="courses">
+                    <span class="card-icon">📚</span>
+                    <h3>Mes cours</h3>
+                    <p>Apprends et révise tes leçons.</p>
+                </button>
+
+
+                <button class="dashboard-card" data-section="exercises">
+                    <span class="card-icon">✍️</span>
+                    <h3>Exercices</h3>
+                    <p>Entraîne-toi avec des exercices.</p>
+                </button>
+
+
+                <button class="dashboard-card" data-section="exams">
+                    <span class="card-icon">🎓</span>
+                    <h3>Examens</h3>
+                    <p>Prépare tes examens et concours.</p>
+                </button>
+
+
+                <button class="dashboard-card" data-section="ai">
+                    <span class="card-icon">🤖</span>
+                    <h3>BAC IA</h3>
+                    <p>Ton futur assistant pédagogique.</p>
+                </button>
+
+
+                <button class="dashboard-card" data-section="calendar">
+                    <span class="card-icon">📅</span>
+                    <h3>Calendrier</h3>
+                    <p>Consulte les dates des examens.</p>
+                </button>
+
+
+                <button class="dashboard-card" data-section="progress">
+                    <span class="card-icon">📊</span>
+                    <h3>Ma progression</h3>
+                    <p>Retrouve tes résultats et progrès.</p>
+                </button>
+
+
+                <button class="dashboard-card" data-section="profile">
+                    <span class="card-icon">👤</span>
+                    <h3>Mon profil</h3>
+                    <p>Consulte tes informations.</p>
+                </button>
+
+
+                <button class="dashboard-card" data-section="settings">
+                    <span class="card-icon">⚙️</span>
+                    <h3>Paramètres</h3>
+                    <p>Personnalise ton application.</p>
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- INFORMATIONS -->
+
+        <section class="dashboard-info">
+
+            <h2>POWER PILOT TECHNOLOGY</h2>
+
+            <p>
+                L'éducation sans frontières.
+                Construisons ensemble la réussite de demain.
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <!-- PIED DE PAGE -->
+
+    <footer>
+        <p>© 2026 BAC RÉUSSITE INTERNATIONAL</p>
+        <p>POWER PILOT TECHNOLOGY</p>
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="app.js"></script>
+
+    <script>
+        if ("serviceWorker" in navigator) {
+            window.addEventListener("load", function () {
+                navigator.serviceWorker.register("./service-worker.js")
+                    .catch(function (error) {
+                        console.log("Service Worker :", error);
+                    });
+            });
+        }
+    </script>
+
+</body>
+</html>

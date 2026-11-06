@@ -1,0 +1,479 @@
+/* =====================================
+   BAC RÉUSSITE INTERNATIONAL
+   POWER PILOT TECHNOLOGY
+===================================== */
+
+:root {
+    --navy: #071a35;
+    --navy-light: #102b50;
+    --gold: #f5bd45;
+    --white: #ffffff;
+    --background: #f2f5fa;
+    --text: #18243a;
+    --muted: #718096;
+    --shadow: 0 12px 35px rgba(7, 26, 53, 0.12);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: var(--background);
+    color: var(--text);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* EN-TÊTE */
+
+.header {
+    min-height: 80px;
+    padding: 15px 6%;
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    background: var(--navy);
+    color: var(--white);
+    position: relative;
+    z-index: 10;
+}
+
+.logo {
+    width: 52px;
+    height: 52px;
+    border: 2px solid var(--gold);
+    border-radius: 15px;
+    display: grid;
+    place-items: center;
+    color: var(--gold);
+    font-weight: 900;
+    font-size: 20px;
+    box-shadow: 0 0 18px rgba(245, 189, 69, 0.25);
+}
+
+.brand h2 {
+    font-size: 17px;
+    letter-spacing: 1px;
+}
+
+.brand span {
+    color: var(--gold);
+    font-size: 11px;
+    letter-spacing: 3px;
+}
+
+.language-button {
+    margin-left: auto;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    background: transparent;
+    padding: 10px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* ACCUEIL */
+
+.hero {
+    min-height: 430px;
+    padding: 75px 7%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    background:
+        radial-gradient(circle at 15% 20%, rgba(245,189,69,.25), transparent 30%),
+        radial-gradient(circle at 85% 80%, rgba(47,128,237,.3), transparent 30%),
+        linear-gradient(135deg, #071a35, #123c69);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before,
+.hero::after {
+    content: "";
+    position: absolute;
+    border: 1px solid rgba(245,189,69,.25);
+    border-radius: 50%;
+    animation: rotation 18s linear infinite;
+}
+
+.hero::before {
+    width: 350px;
+    height: 350px;
+    top: -180px;
+    left: -100px;
+}
+
+.hero::after {
+    width: 280px;
+    height: 280px;
+    right: -100px;
+    bottom: -150px;
+    animation-direction: reverse;
+}
+
+.hero-content {
+    max-width: 800px;
+    position: relative;
+    z-index: 2;
+    animation: appear 1s ease;
+}
+
+.hero h1 {
+    font-size: clamp(30px, 5vw, 52px);
+    line-height: 1.2;
+    margin-bottom: 22px;
+}
+
+.description {
+    font-size: 17px;
+    line-height: 1.7;
+    color: #dce7f5;
+    max-width: 650px;
+    margin: auto;
+}
+
+/* CHOIX DE L'ESPACE */
+
+.zone-selection {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 35px;
+}
+
+.zone {
+    padding: 15px 22px;
+    border: 1px solid var(--gold);
+    border-radius: 30px;
+    background: transparent;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.zone:hover,
+.zone.active {
+    background: var(--gold);
+    color: var(--navy);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(245,189,69,.25);
+}
+
+/* FORMULAIRE */
+
+.student-section {
+    padding: 65px 20px;
+}
+
+.section-title {
+    text-align: center;
+    color: var(--navy);
+    font-size: 29px;
+    margin-bottom: 30px;
+}
+
+.form-container {
+    width: min(100%, 480px);
+    margin: auto;
+    padding: 30px;
+    background: white;
+    border-radius: 22px;
+    box-shadow: var(--shadow);
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin: 18px 0 9px;
+    color: var(--navy);
+}
+
+select {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #dce3ed;
+    border-radius: 12px;
+    background: #f8faff;
+    font-size: 15px;
+    color: var(--text);
+    outline: none;
+}
+
+select:focus {
+    border-color: var(--gold);
+}
+
+.start {
+    width: 100%;
+    margin-top: 25px;
+    padding: 16px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(120deg, #f5bd45, #e69c20);
+    color: var(--navy);
+    font-size: 16px;
+    font-weight: 900;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.start:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(230,156,32,.3);
+}
+
+#message {
+    text-align: center;
+    margin-top: 15px;
+    font-weight: bold;
+    color: var(--navy);
+}
+
+/* TABLEAU DE BORD */
+
+.dashboard-welcome {
+    padding: 45px 7%;
+    color: white;
+    background:
+        radial-gradient(circle at 90% 10%, rgba(245,189,69,.22), transparent 30%),
+        linear-gradient(135deg, #071a35, #123c69);
+    animation: appear .8s ease;
+}
+
+.dashboard-label {
+    color: var(--gold);
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 4px;
+    margin-bottom: 12px;
+}
+
+.dashboard-welcome h1 {
+    font-size: clamp(25px, 4vw, 38px);
+    margin-bottom: 25px;
+}
+
+.dashboard-welcome h2 {
+    color: var(--gold);
+    font-size: 23px;
+    margin-bottom: 10px;
+}
+
+.dashboard-welcome p:last-child {
+    color: #dce7f5;
+    line-height: 1.6;
+}
+
+/* CARTES */
+
+.dashboard-section {
+    padding: 45px 6%;
+}
+
+.dashboard-section > h2 {
+    font-size: 25px;
+    color: var(--navy);
+    margin-bottom: 25px;
+}
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.dashboard-card {
+    min-height: 190px;
+    padding: 23px;
+    text-align: left;
+    border: 1px solid #e5eaf2;
+    border-radius: 20px;
+    background: white;
+    box-shadow: 0 7px 22px rgba(7,26,53,.06);
+    cursor: pointer;
+    transition: transform .3s, box-shadow .3s;
+    animation: appear .7s ease both;
+}
+
+.dashboard-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow);
+    border-color: var(--gold);
+}
+
+.card-icon {
+    display: block;
+    font-size: 35px;
+    margin-bottom: 17px;
+}
+
+.dashboard-card h3 {
+    color: var(--navy);
+    font-size: 18px;
+    margin-bottom: 9px;
+}
+
+.dashboard-card p {
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* INFORMATIONS */
+
+.dashboard-info {
+    margin: 15px 6% 45px;
+    padding: 30px;
+    text-align: center;
+    border-radius: 20px;
+    background: white;
+    box-shadow: var(--shadow);
+}
+
+.dashboard-info h2 {
+    color: var(--navy);
+    margin-bottom: 12px;
+}
+
+.dashboard-info p {
+    color: var(--muted);
+    line-height: 1.6;
+}
+
+.dashboard-info .start {
+    max-width: 300px;
+}
+
+/* PIED DE PAGE */
+
+footer {
+    padding: 25px 15px;
+    text-align: center;
+    background: var(--navy);
+    color: white;
+    line-height: 1.8;
+    font-size: 13px;
+}
+
+footer p:last-child {
+    color: var(--gold);
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+/* ANIMATIONS */
+
+@keyframes rotation {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* RESPONSIVE MOBILE */
+
+@media (max-width: 900px) {
+    .dashboard-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 500px) {
+    .header {
+        padding: 12px 4%;
+    }
+
+    .brand h2 {
+        font-size: 14px;
+    }
+
+    .brand span {
+        font-size: 9px;
+    }
+
+    .logo {
+        width: 45px;
+        height: 45px;
+    }
+
+    .hero {
+        padding: 60px 20px;
+        min-height: 400px;
+    }
+
+    .hero h1 {
+        font-size: 30px;
+    }
+
+    .description {
+        font-size: 15px;
+    }
+
+    .zone-selection {
+        flex-direction: column;
+    }
+
+    .form-container {
+        padding: 23px 18px;
+    }
+
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .dashboard-card {
+        min-height: 150px;
+    }
+
+    .dashboard-welcome {
+        padding: 35px 6%;
+    }
+
+    .dashboard-section {
+        padding: 35px 5%;
+    }
+}
+
+/* ACCESSIBILITÉ */
+
+[hidden] {
+    display: none !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
